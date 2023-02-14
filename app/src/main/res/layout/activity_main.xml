@@ -8,17 +8,30 @@
 
     <TextView
         android:id="@+id/textSizeDisplayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Hello World!"
-        tools:layout_editor_absoluteX="336dp"
-        tools:layout_editor_absoluteY="713dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSizeSelectorRecyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/textSizeSelectorRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        android:layout_height="1055dp"
+        app:layout_constraintBottom_toTopOf="@+id/textSizeDisplayTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="484dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
