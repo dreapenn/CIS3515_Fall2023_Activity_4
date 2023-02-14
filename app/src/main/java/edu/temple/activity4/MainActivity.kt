@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import org.w3c.dom.Text
+import ...
+
 
 
 
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         textSizeDisplay = findViewById(R.id.textSizeDisplayTextView)
         val textSizes = Array(20){(it + 1) * 5}
 
-        for (i in 0<= until < textSizes.size)
+        for (i in 0 until textSizes.size)
             Log.d("Array Vals", textSizes[i].toString())
 
         textSizeSelector.adapter = TextSizeAdapter(textSizes)
