@@ -1,5 +1,6 @@
 package edu.temple.activity4
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import org.w3c.dom.Text
+const val MESSAGE_KEY = "text size"
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,8 +34,12 @@ class MainActivity : AppCompatActivity() {
         with(findViewById<RecyclerView>(R.id.textSizeSelectorRecyclerView)){
             adapter = TextSizeAdapter(textSizes){
                 textSizeDisplay.textSize = it
+                layoutManager = LinearLayoutManager(this@MainActivity)
+                val launchIntent = Intent(this@MainActivity, MainActivity2::class.java)
+                launchIntent.putExtra(MESSAGE_KEY,it.toInt())
+                startActivity(launchIntent)
             }
-            layoutManager = LinearLayoutManager(this@MainActivity)
+
         }
 
 
@@ -51,7 +57,8 @@ class TextSizeAdapter(_textSizes : Array<Int>, _callback: (Float) -> Unit) : Rec
         val textView = view
 
         init{
-            textView.setOnClickListener{callback(textSizes[adapterPosition].toFloat())}
+            textView.setOnClickListener{callback(textSizes[adapterPosition].toFloat())
+            }
         }
 
     }
