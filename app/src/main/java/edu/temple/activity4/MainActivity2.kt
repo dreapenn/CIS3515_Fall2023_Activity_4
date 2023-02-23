@@ -22,8 +22,4 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
-    }
 }

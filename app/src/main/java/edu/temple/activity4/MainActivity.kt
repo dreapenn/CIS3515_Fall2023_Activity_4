@@ -34,11 +34,11 @@ class MainActivity : AppCompatActivity() {
         with(findViewById<RecyclerView>(R.id.textSizeSelectorRecyclerView)){
             adapter = TextSizeAdapter(textSizes){
                 textSizeDisplay.textSize = it
-                layoutManager = LinearLayoutManager(this@MainActivity)
                 val launchIntent = Intent(this@MainActivity, MainActivity2::class.java)
                 launchIntent.putExtra(MESSAGE_KEY,it.toInt())
                 startActivity(launchIntent)
             }
+            layoutManager = LinearLayoutManager(this@MainActivity)
 
         }
 
